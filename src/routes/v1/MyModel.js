@@ -15,7 +15,7 @@ const failAction = type => async (request, h, err) => {
     Boom.badRequest(`Invalid request payload input: ${err.message}`) :
     Boom.badImplementation(`Invalid response payload output`);
 };
-console.log('api version is :', apiVersion);
+
 module.exports = [
 
   {
