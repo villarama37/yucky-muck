@@ -18,12 +18,12 @@ Get the MyModel that has the supplied id.
 
 | Code | Description | Schema |
 | ---- | ----------- | ------ |
-| 200 | Successful | [Model1](#model1) |
+| 200 | Successful | [MyModel](#MyModel) |
 
 ### Models
 
 
-#### Model1
+#### MyModel
 
 | Name | Type | Description | Required |
 | ---- | ---- | ----------- | -------- |
