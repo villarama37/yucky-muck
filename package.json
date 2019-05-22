@@ -1,0 +1,17 @@
+{
+  "name": "Hapi Starter Kit",
+  "version": "0.0.1",
+  "description": "Example Hapi Service",
+  "main": "server.js",
+  "scripts": {
+    "start": "node ."
+  },
+  "dependencies": {
+    "boom": "^7.1.1",
+    "hapi": "^17.8.5",
+    "hapi-swagger": "^9.4.2",
+    "inert": "^5.1.0",
+    "joi": "^13.4.0"
+  },
+  "devDependencies": {}
+}
