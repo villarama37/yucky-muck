@@ -14,5 +14,7 @@
     "inert": "^5.1.0",
     "vision": "^5.4.4"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "eslint": "^5.14.1"
+  }
 }

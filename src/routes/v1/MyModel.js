@@ -1,4 +1,3 @@
-const Joi = require('@hapi/joi');
 const Boom = require('boom');
 const MyModel = require(__dirname + '/../../models/MyModel.js');
 
@@ -43,6 +42,6 @@ module.exports = [
       console.log('my handler is being called');
       return { id: 0, description: 'example description'};
     },
-  }
+  },
 
 ];
