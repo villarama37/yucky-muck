@@ -1,4 +1,4 @@
-const Joi = require('joi');
+const Joi = require('@hapi/joi');
 const Boom = require('boom');
 const MyModel = require(__dirname + '/../../models/MyModel.js');
 
@@ -16,71 +16,33 @@ const failAction = type => async (request, h, err) => {
     Boom.badRequest(`Invalid request payload input: ${err.message}`) :
     Boom.badImplementation(`Invalid response payload output`);
 };
-
+console.log('api version is :', apiVersion);
 module.exports = [
 
   {
     method: 'GET',
-    path: `/${apiVersion}/permissions/permissionActivities`,
+    path: `/${apiVersion}/MyModels/{id}`,
     options: {
       tags: ['api'],
-      description: 'Retrieves permissionActivities for a given set of roles.',
+      description: 'Get the MyModel that has the supplied id.',
       validate: {
-        query: {
-          roles: Joi.array().items(permissionsModel.roleId),
-          method: permissionsModel.method.optional(),
-          url: permissionsModel.url.optional(),
+        params: {
+          id: MyModel.id,
         },
         options: { presence: 'required' },
         failAction: failAction('request'),
       },
       response: {
-        schema: { data: Joi.array().items(permissionsModel.permissionActivity) },
+        schema: MyModel,
         failAction: failAction('response'),
       },
       log: { collect: true },
+      auth: false,
     },
-    handler: async (request, h) => await permissionsController.getPermissionActivities(
-      request.query.roles,
-      request.query.method,
-      request.query.url,
-      request
-    ),
-  },
-
-  {
-    method: 'GET',
-    path: `/${apiVersion}/permissions`,
-    options: {
-      tags: ['api'],
-      description: 'Retrieves a set of permissions for a given set of roles.',
-      validate: {
-        query: { roles: Joi.array().items(permissionsModel.roleId) },
-        options: { presence: 'required' },
-        failAction: failAction('request'),
-      },
-      response: {
-        schema: { data: Joi.array().items(permissionsModel.permission) },
-        failAction: failAction('response'),
-      },
-      log: { collect: true },
+    handler: async (request, h) => {
+      console.log('my handler is being called');
+      return { id: 0, description: 'example description'};
     },
-    handler: async (request, h) => await permissionsController.getPermissionsByRoles(request.query.roles, request),
-  },
-
-  {
-    method: 'GET',
-    path: `/${apiVersion}/permissions/rolePermissions`,
-    options: {
-      tags: ['api'],
-      description: 'Retrieves a list of permissions and their rolePermissions.',
-      response: {
-        schema: { data: Joi.array().items(permissionsModel.rolePermission) },
-        failAction: failAction('response'),
-      },
-      log: { collect: true },
-    },
-    handler: async (request, h) => await permissionsController.findRolePermissions(request),
-  },
+  }
 
 ];

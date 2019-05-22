@@ -8,7 +8,7 @@ const exampleRoutes = require(__dirname + '/src/routes/v1/MyModel.js');
 (async () => {
     const server = await new Hapi.Server({
         host: 'localhost',
-        port: 3000,
+        port: 4044,
     });
     
     const swaggerOptions = {

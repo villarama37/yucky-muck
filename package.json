@@ -1,5 +1,5 @@
 {
-  "name": "Hapi Starter Kit",
+  "name": "hapi-starter-kit",
   "version": "0.0.1",
   "description": "Example Hapi Service",
   "main": "server.js",
@@ -8,10 +8,11 @@
   },
   "dependencies": {
     "boom": "^7.1.1",
-    "hapi": "^17.8.5",
+    "hapi": "^18.1.0",
+    "@hapi/joi": "^15.0.3",
     "hapi-swagger": "^9.4.2",
     "inert": "^5.1.0",
-    "joi": "^13.4.0"
+    "vision": "^5.4.4"
   },
   "devDependencies": {}
 }
