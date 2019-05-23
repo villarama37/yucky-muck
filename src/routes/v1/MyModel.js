@@ -43,7 +43,7 @@ module.exports = [
       auth: false,
     },
     handler: async (request, h) => {
-      console.log('my handler is being called');
+      //TODO replace example handler
       return { id: 0, description: 'example description'};
     },
   },
