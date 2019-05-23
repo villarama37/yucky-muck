@@ -1,5 +1,4 @@
 const Hapi = require('hapi');
-const Pack = require('./package');
 const exampleRoutes = require(__dirname + '/src/routes/v1/MyModel.js');
 const plugins = require(__dirname + '/src/plugins/plugins.js');
 
@@ -9,10 +8,12 @@ const plugins = require(__dirname + '/src/plugins/plugins.js');
     port: 4044,
   });
 
-  // register plugins
-  await server.register(plugins);
-
   try {
+    // register plugins
+    await server.register(plugins);
+    // add routes
+    server.route(exampleRoutes);
+    // start server
     await server.start();
     console.log('Server running at:', server.info.uri);
     console.log('Swagger definition available at:', server.info.uri + '/swagger.json');
@@ -21,5 +22,4 @@ const plugins = require(__dirname + '/src/plugins/plugins.js');
     console.log(err);
   }
 
-  server.route(exampleRoutes);
 })();
