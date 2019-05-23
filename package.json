@@ -16,6 +16,7 @@
     "vision": "^5.4.4"
   },
   "devDependencies": {
-    "eslint": "^5.14.1"
+    "eslint": "^5.14.1",
+    "nodemon": "^1.18.9"
   }
 }
