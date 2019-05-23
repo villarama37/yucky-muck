@@ -1,5 +1,6 @@
 const Boom = require('boom');
 const MyModel = require(__dirname + '/../../models/MyModel.js');
+const Joi = require('@hapi/joi');
 
 // Get api version for this route from the directory name
 const apiVersion = __dirname.match(/routes\/(v\d+)/)[1];
@@ -26,13 +27,16 @@ module.exports = [
       description: 'Get the MyModel that has the supplied id.',
       validate: {
         params: {
-          id: MyModel.id,
+          id: Joi.number().integer(),
         },
         options: { presence: 'required' },
         failAction: failAction('request'),
       },
       response: {
-        schema: MyModel,
+        status: {
+          200: MyModel,
+          403: Joi.any()
+        },
         failAction: failAction('response'),
       },
       log: { collect: true },

@@ -38,7 +38,7 @@ Type: `ID` (can be `String` or `Int`, though we only use `Int`)
 
 Primary key for MyModel instances.
 
-#### <a name="MyModel.message" /> `MyModel.message`
+#### <a name="MyModel.description" /> `MyModel.description`
 
 Type: `String`
 
