@@ -4,7 +4,7 @@ const plugins = require(__dirname + '/src/plugins/plugins.js');
 
 (async () => {
   const server = await new Hapi.Server({
-    host: 'localhost',
+    host: '0.0.0.0',
     port: 4044,
   });
 
