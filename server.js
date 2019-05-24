@@ -1,5 +1,6 @@
 const Hapi = require('hapi');
 const exampleRoutes = require(__dirname + '/src/routes/v1/MyModel.js');
+const healthcheckRoute = require(__dirname + '/src/routes/version.js');
 const plugins = require(__dirname + '/src/plugins/plugins.js');
 
 (async () => {
@@ -13,6 +14,7 @@ const plugins = require(__dirname + '/src/plugins/plugins.js');
     await server.register(plugins);
     // add routes
     server.route(exampleRoutes);
+    server.route(healthcheckRoute);
     // start server
     await server.start();
     console.log('Server running at:', server.info.uri);
