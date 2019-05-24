@@ -1,5 +1,4 @@
-const Boom = require('@hapi/boom');
-const MyModelDao = require('../dao/MyModel.js')
+const MyModelDao = require('../dao/MyModel.js');
 
 /*
  * PRIVATE METHODS
@@ -36,7 +35,7 @@ module.exports.findById = async (id, request) => {
  * @return {Promise}
  */
 module.exports.create = async (myModel, request) => {
-  return await MyModelDao.create(myModel)
+  return await MyModelDao.create(myModel);
 };
 
 // Export private methods for test
