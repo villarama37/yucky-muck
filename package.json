@@ -17,6 +17,7 @@
   },
   "devDependencies": {
     "eslint": "^5.14.1",
-    "nodemon": "^1.18.9"
+    "nodemon": "^1.18.9",
+    "git-hooks": "^1.1.10"
   }
 }
