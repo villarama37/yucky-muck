@@ -35,7 +35,7 @@ module.exports = [
       response: {
         status: {
           200: MyModel,
-          403: Joi.any()
+          403: Joi.any(),
         },
         failAction: failAction('response'),
       },
@@ -43,7 +43,7 @@ module.exports = [
       auth: false,
     },
     handler: async (request, h) => {
-      //TODO replace example handler
+      // TODO: replace example handler
       return { id: 0, description: 'example description'};
     },
   },

@@ -6,6 +6,6 @@ const MyModel = Joi.object().keys({
   description: Joi.string()
     .description('Description of the example model'),
 })
-.description('example model definition').label('MyModel');
+  .description('example model definition').label('MyModel');
 
 module.exports = MyModel;
