@@ -2,7 +2,7 @@ version: 0.2
 
 # Usage:
 # aws codebuild start-build \
-#   --project-name codebuild_dev_nora-servicename-api \
+#   --project-name codebuild_dev_nora-hapi-starter-kit \
 #   --source-version $SOURCE_VERSION \
 #   --buildspec-override codebuild/dev-buildspec.yml \
 #   --environment-variables-override name=ENV,value=$ENV
@@ -11,12 +11,12 @@ env:
   variables:
     ENV: "dev"  # override this value for stage, sandbox, build, etc
     IMAGE_TAG: "latest"
-    IMAGE_REPO_NAME: "ecr_dev_nora-servicename-api"
+    IMAGE_REPO_NAME: "ecr_dev_nora-hapi-starter-kit"
     AWS_ACCOUNT_ID: "125900505984"
     SLACK_CHANNEL: "tech-backend"
     SLACK_WEBHOOK: "https://hooks.slack.com/services/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"
     CODEBUILD_URL: "<https://us-west-2.console.aws.amazon.com/codebuild/home?region=us-west-2#/builds/%s/view/new|View Log>"
-    PROJECT: "nora-servicename-api"
+    PROJECT: "hapi-starter-kit"
     FAILURE_TITLE: "DOCKER BUILD FAILED"
     SUCCESS_TITLE: "DOCKER BUILD SUCCEEDED"
 

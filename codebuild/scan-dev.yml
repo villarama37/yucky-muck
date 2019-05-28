@@ -6,7 +6,7 @@ env:
     SLACK_CHANNEL: "tech-github"
     SLACK_WEBHOOK: "https://hooks.slack.com/services/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"
     CODEBUILD_URL: "<https://us-west-2.console.aws.amazon.com/codebuild/home?region=us-west-2#/builds/%s/view/new|View Log>"
-    PROJECT: "nora-<servicename>-api"
+    PROJECT: "hapi-starter-kit"
     FAILURE_TITLE: "IMAGE SCAN FAILED - DEV"
     SUCCESS_TITLE: "IMAGE SCAN PASSED - DEV"
     BD_URL: "https://science37.blackducksoftware.com"
