@@ -1,10 +1,11 @@
 const Boom = require('boom');
-const MyModel = require(__dirname + '/../../models/MyModel.js');
+const MyModel = require(__dirname + '/../../../models/MyModel.js');
 const Joi = require('@hapi/joi');
 
 // Get api version for this route from the directory name
-const apiVersion = __dirname.match(/routes\/(v\d+)/)[1];
-
+const pathParts = __dirname.match(/routes\/(v\d+)\/([^/]+)/);
+const apiVersion = pathParts[1];
+const svcName = pathParts[2];
 /**
  * @description Universal hapi failAction function for validation requests
  * @param {string} type - type of validation -- 'request' or 'response'
@@ -21,7 +22,7 @@ module.exports = [
 
   {
     method: 'GET',
-    path: `/${apiVersion}/MyModels/{id}`,
+    path: `/${apiVersion}/${svcName}/MyModels/{id}`,
     options: {
       tags: ['api'],
       description: 'Get the MyModel that has the supplied id.',
