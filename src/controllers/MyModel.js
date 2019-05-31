@@ -1,4 +1,4 @@
-const MyModelDao = require('../dao/MyModel.js');
+const MyModelDao = require(__dirname + '/../dao/MyModel.js');
 
 /*
  * PRIVATE METHODS
@@ -25,7 +25,7 @@ module.exports = {};
 * @return {Promise}
 */
 module.exports.findById = async (id, request) => {
-  return await MyModelDao.findById(id);
+  return await MyModelDao.findById(id, request);
 };
 
 /**
@@ -35,7 +35,7 @@ module.exports.findById = async (id, request) => {
  * @return {Promise}
  */
 module.exports.create = async (myModel, request) => {
-  return await MyModelDao.create(myModel);
+  return await MyModelDao.create(myModel, request);
 };
 
 // Export private methods for test

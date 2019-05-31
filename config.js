@@ -1,5 +1,6 @@
 'use strict';
 
+const deepmerge = require('deepmerge');
 const config = {};
 
 // default is local cloud9
@@ -12,15 +13,18 @@ config.local = {
     host: 'db',
     user: 'admin',
     port: 3306,
-    database: 'nora',
+    database: 'starter-kit',
     connectionLimit: 10,
     acquireTimeout: 60000,
-    timeout: 60000
+    timeout: 60000,
+    password: '3k293cp0tjnMq',
+    default: true,
+    usePool: true,
   },
   logging: {
     aws: {
       region: 'us-west-2',
-      logGroup: '/dev-docker/nora/core/', //Replace 'core' with appropriate service
+      logGroup: '/dev-docker/nora/core/', // Replace 'core' with appropriate service
     },
     redactFields: [
     ],
@@ -54,7 +58,7 @@ config.dev = {
   },
   logging: {
     aws: {
-      logGroup: '/dev/nora/core/', //Replace 'core' with appropriate service
+      logGroup: '/dev/nora/core/', // Replace 'core' with appropriate service
     },
   },
 };
@@ -62,12 +66,15 @@ config.dev = {
 // dev-ecs
 config.dev_ecs = {
   coreDB: {
+    user: 'prospect',
     host: 'db-nora-dev.cti10lnrh4rb.us-west-2.rds.amazonaws.com',
     ssl: 'Amazon RDS',
+    useIAM: true,
+    region: 'us-west-2',
   },
   logging: {
     aws: {
-      logGroup: '/dev-ecs/nora/core/', //Replace 'core' with appropriate service
+      logGroup: '/dev-ecs/nora/core/', // Replace 'core' with appropriate service
     },
   },
 };
@@ -78,10 +85,12 @@ config.bi = {
     host: 'db-nora-bi.science37.com',
     database: 'nora-bi',
     ssl: 'Amazon RDS',
+    useIAM: true,
+    region: 'us-west-2',
   },
   logging: {
     aws: {
-      logGroup: '/bi-ecs/nora/core/', //Replace 'core' with appropriate service
+      logGroup: '/bi-ecs/nora/core/', // Replace 'core' with appropriate service
     },
     loggers: {
       general: {
@@ -102,10 +111,12 @@ config.bi = {
 config.build = {
   coreDB: {
     host: 'db-nora-build.science37.com',
+    useIAM: true,
+    region: 'us-west-2',
   },
   logging: {
     aws: {
-      logGroup: '/build-ecs/nora/core/', //Replace 'core' with appropriate service
+      logGroup: '/build-ecs/nora/core/', // Replace 'core' with appropriate service
     },
     loggers: {
       general: {
@@ -127,10 +138,12 @@ config.sandbox = {
   coreDB: {
     host: 'db-nora-sandbox.science37.com',
     ssl: 'Amazon RDS',
+    useIAM: true,
+    region: 'us-west-2',
   },
   logging: {
     aws: {
-      logGroup: '/sandbox-ecs/nora/core/', //Replace 'core' with appropriate service
+      logGroup: '/sandbox-ecs/nora/core/', // Replace 'core' with appropriate service
     },
     loggers: {
       general: {
@@ -143,7 +156,7 @@ config.sandbox = {
       eventlog: {
         'default': 'warn',
       },
-    },    
+    },
   },
 };
 
@@ -152,10 +165,12 @@ config.test = {
   coreDB: {
     host: 'db-nora-stage.cti10lnrh4rb.us-west-2.rds.amazonaws.com',
     ssl: 'Amazon RDS',
+    useIAM: true,
+    region: 'us-west-2',
   },
   logging: {
     aws: {
-      logGroup: '/stage-ecs/nora/core/', //Replace 'core' with appropriate service
+      logGroup: '/stage-ecs/nora/core/', // Replace 'core' with appropriate service
     },
   },
 };
@@ -170,7 +185,7 @@ config.test = {
   logging: {
     aws: {
       region: 'us-west-2',
-      logGroup: '/test/nora/core/', //Replace 'core' with appropriate service
+      logGroup: '/test/nora/core/', // Replace 'core' with appropriate service
     },
     loggers: {
       general: {
@@ -180,8 +195,13 @@ config.test = {
         },
       },
     },
-  }
+  },
 };
 
+const mergedConfig = deepmerge(config.local, config['dev_ecs'], {
+  arrayMerge: (destination, source) => {
+    return [ ...destination, ...source];
+  },
+});
 
-module.exports = config;
+module.exports = mergedConfig;
