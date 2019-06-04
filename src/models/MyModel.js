@@ -12,7 +12,7 @@ const MyModelResponse = Joi.object().keys({
   description: Joi.string()
     .description('Description of the example model'),
 })
-  .description('example instance of MyModel with the unique ID present').label('MyModel');
+  .description('example instance of MyModel with the unique ID present').label('MyModelResponse');
 
 
 module.exports = { MyModel, MyModelResponse };
