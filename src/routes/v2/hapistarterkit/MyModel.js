@@ -51,7 +51,7 @@ module.exports = [
   },
   {
     method: 'POST',
-    path: `/${apiVersion}/MyModels`,
+    path: `/${apiVersion}/${svcName}/MyModels`,
     options: {
       tags: ['api'],
       description: 'Create a MyModel',
@@ -63,7 +63,7 @@ module.exports = [
       response: {
         status: {
           200: Joi.number().integer().description('id of newly created MyModel'),
-          403: Joi.any(),
+          400: Joi.any(),
         },
         failAction: failAction('response'),
       },
