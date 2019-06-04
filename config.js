@@ -10,7 +10,7 @@ config.local = {
     port: 11116,
   },
   starterKitDB: {
-    host: 'db',
+    host: 'localhost',
     user: 'starter-kit',
     port: 3306,
     database: 'starter-kit',

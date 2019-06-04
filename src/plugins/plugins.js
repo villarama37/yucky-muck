@@ -18,7 +18,7 @@ const plugins = [
       },
     },
   },
-  { plugin: db.mysql, options: config.coreDB },
+  { plugin: db.mysql, options: config.starterKitDB },
   { plugin: noraLogger.logging, options: config },
   { plugin: noraLogger.listeners, options: config },
 ];
