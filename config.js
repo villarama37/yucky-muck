@@ -108,7 +108,7 @@ config['bi-ecs'] = {
 // build-ecs
 config['build-ecs]'] = {
   starterKitDB: {
-    host: 'db-nora-build.science37.com',
+    host: 'db-nora-build.cti10lnrh4rb.us-west-2.rds.amazonaws.com',
     useIAM: true,
     region: 'us-west-2',
   },
@@ -134,7 +134,7 @@ config['build-ecs]'] = {
 // sandbox-ecs
 config['sandbox-ecs'] = {
   starterKitDB: {
-    host: 'db-nora-sandbox.science37.com',
+    host: 'db-nora-sandbox.cti10lnrh4rb.us-west-2.rds.amazonaws.com',
     ssl: 'Amazon RDS',
     useIAM: true,
     region: 'us-west-2',
