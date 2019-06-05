@@ -15,7 +15,10 @@
     "@hapi/joi": "^15.0.3",
     "hapi-swagger": "^9.4.2",
     "inert": "^5.1.0",
-    "vision": "^5.4.4"
+    "vision": "^5.4.4",
+    "nora-mysql-plugin": "git+ssh://git@github.com/Science37/nora-mysql-plugin.git#feature/SAAS-85-iam-db-auth",
+    "nora-logger-plugin": "git+ssh://git@github.com/Science37/nora-logger-plugin.git#v1.0.2",
+    "deepmerge": "^3.2.0"
   },
   "devDependencies": {
     "eslint": "^5.14.1",

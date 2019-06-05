@@ -1,0 +1,27 @@
+{
+  "defaultEnv": "local-dev",
+  "local-dev": {
+    "driver": "mysql",
+    "user": "starter-kit",
+    "password": "3k293cp0tjnMq",
+    "host": "localhost",
+    "port": "3307",
+    "database": "starter-kit",
+    "schema": "public",
+    "multipleStatements": true,
+    "sql-file": true
+  },
+  "other": {
+    "driver": "mysql",
+    "user": { "ENV" : "DB_PORT" },
+    "password": { "ENV" : "DB_PASSWORD" },
+    "host": { "ENV" : "DB_HOST" },
+    "port": { "ENV" : "DB_PORT" },
+    "database": "starter-kit",
+    "schema": "public",
+    "multipleStatements": true,
+    "sql-file": true,
+    "ssl": "Amazon RDS"
+  },
+  "sql-file": true
+}

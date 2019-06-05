@@ -1,5 +1,6 @@
 const Boom = require('boom');
-const MyModel = require(__dirname + '/../../../models/MyModel.js');
+const { MyModel, MyModelResponse } = require(__dirname + '/../../../models/MyModel.js');
+const MyModelController = require(__dirname + '/../../../controllers/MyModel.js');
 const Joi = require('@hapi/joi');
 
 // Get api version for this route from the directory name
@@ -28,14 +29,14 @@ module.exports = [
       description: 'Get the MyModel that has the supplied id.',
       validate: {
         params: {
-          id: Joi.number().integer(),
+          id: Joi.number().integer().description('id of MyModel instance to get'),
         },
         options: { presence: 'required' },
         failAction: failAction('request'),
       },
       response: {
         status: {
-          200: MyModel,
+          200: MyModelResponse,
           403: Joi.any(),
         },
         failAction: failAction('response'),
@@ -44,8 +45,33 @@ module.exports = [
       auth: false,
     },
     handler: async (request, h) => {
-      // TODO: replace example handler
-      return { id: 0, description: 'example description'};
+      const id = request.params.id;
+      return await MyModelController.findById(id, request);
+    },
+  },
+  {
+    method: 'POST',
+    path: `/${apiVersion}/${svcName}/MyModels`,
+    options: {
+      tags: ['api'],
+      description: 'Create a MyModel',
+      validate: {
+        payload: MyModel,
+        options: { presence: 'required' },
+        failAction: failAction('request'),
+      },
+      response: {
+        status: {
+          200: Joi.number().integer().description('id of newly created MyModel'),
+          400: Joi.any(),
+        },
+        failAction: failAction('response'),
+      },
+      log: { collect: true },
+      auth: false,
+    },
+    handler: async (request, h) => {
+      return await MyModelController.create(request.payload, request);
     },
   },
 
