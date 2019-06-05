@@ -105,7 +105,7 @@ config['bi-ecs'] = {
   },
 };
 
-// build_ecs
+// build-ecs
 config['build-ecs]'] = {
   starterKitDB: {
     host: 'db-nora-build.science37.com',
@@ -114,7 +114,7 @@ config['build-ecs]'] = {
   },
   logging: {
     aws: {
-      logGroup: '/build-ecs/nora/starter-kit/', // Replace 'core' with appropriate service
+      logGroup: '/build-ecs/nora/starter-kit/',
     },
     loggers: {
       general: {
@@ -131,7 +131,7 @@ config['build-ecs]'] = {
   },
 };
 
-// sandbox_ecs
+// sandbox-ecs
 config['sandbox-ecs'] = {
   starterKitDB: {
     host: 'db-nora-sandbox.science37.com',
@@ -141,7 +141,7 @@ config['sandbox-ecs'] = {
   },
   logging: {
     aws: {
-      logGroup: '/sandbox-ecs/nora/starter-kit/', // Replace 'core' with appropriate service
+      logGroup: '/sandbox-ecs/nora/starter-kit/',
     },
     loggers: {
       general: {
@@ -158,7 +158,7 @@ config['sandbox-ecs'] = {
   },
 };
 
-// stage_ecs
+// stage-ecs
 config['stage-ecs'] = {
   starterKitDB: {
     host: 'db-nora-stage.cti10lnrh4rb.us-west-2.rds.amazonaws.com',
@@ -168,7 +168,54 @@ config['stage-ecs'] = {
   },
   logging: {
     aws: {
-      logGroup: '/stage-ecs/nora/starter-kit/', // Replace 'core' with appropriate service
+      logGroup: '/stage-ecs/nora/starter-kit/',
+    },
+  },
+};
+
+// val-ecs
+config['val-ecs'] = {
+  starterKitDB: {
+    host: process.env.DB_HOST,
+    ssl: 'Amazon RDS',
+    useIAM: true,
+    region: process.env.DB_REGION,
+  },
+  logging: {
+    aws: {
+      logGroup: '/val-ecs/nora/starter-kit/',
+    },
+  },
+};
+
+// pat-ecs
+
+config['pat-ecs'] = {
+  starterKitDB: {
+    host: process.env.DB_HOST,
+    ssl: 'Amazon RDS',
+    useIAM: true,
+    region: process.env.DB_REGION,
+  },
+  logging: {
+    aws: {
+      logGroup: '/pat-ecs/nora/starter-kit/',
+    },
+  },
+};
+
+// prod-ecs
+
+config['prod-ecs'] = {
+  starterKitDB: {
+    host: process.env.DB_HOST,
+    ssl: 'Amazon RDS',
+    useIAM: true,
+    region: process.env.DB_REGION,
+  },
+  logging: {
+    aws: {
+      logGroup: '/prod-ecs/nora/starter-kit/',
     },
   },
 };
@@ -182,7 +229,7 @@ config['test'] = {
   logging: {
     aws: {
       region: 'us-west-2',
-      logGroup: '/test/nora/starter-kit/', // Replace 'core' with appropriate service
+      logGroup: '/test/nora/starter-kit/',
     },
     loggers: {
       general: {
