@@ -24,7 +24,7 @@ config['dev-docker'] = {
   logging: {
     aws: {
       region: 'us-west-2',
-      logGroup: '/dev-docker/starter-kit/',
+      logGroup: '/dev-docker/nora/starter-kit/',
     },
     redactFields: [
     ],
@@ -49,7 +49,7 @@ config['dev-docker'] = {
 };
 
 // dev
-config.dev = {
+config['dev'] = {
   starterKitDB: {
     host: 'localhost',
     port: 3307,
@@ -57,13 +57,13 @@ config.dev = {
   },
   logging: {
     aws: {
-      logGroup: '/dev/starter-kit/',
+      logGroup: '/dev/nora/starter-kit/',
     },
   },
 };
 
 // dev-ecs
-config.dev_ecs = {
+config['dev-ecs'] = {
   starterKitDB: {
     host: 'db-nora-dev.cti10lnrh4rb.us-west-2.rds.amazonaws.com',
     ssl: 'Amazon RDS',
@@ -72,13 +72,13 @@ config.dev_ecs = {
   },
   logging: {
     aws: {
-      logGroup: '/dev-ecs/starter-kit/',
+      logGroup: '/dev-ecs/nora/starter-kit/',
     },
   },
 };
 
 // bi-ecs
-config.bi = {
+config['bi-ecs'] = {
   starterKitDB: {
     host: 'db-nora-bi.science37.com',
     database: 'nora-bi',
@@ -88,7 +88,7 @@ config.bi = {
   },
   logging: {
     aws: {
-      logGroup: '/bi-ecs/starter-kit/',
+      logGroup: '/bi-ecs/nora/starter-kit/',
     },
     loggers: {
       general: {
@@ -106,7 +106,7 @@ config.bi = {
 };
 
 // build_ecs
-config.build = {
+config['build-ecs]'] = {
   starterKitDB: {
     host: 'db-nora-build.science37.com',
     useIAM: true,
@@ -114,7 +114,7 @@ config.build = {
   },
   logging: {
     aws: {
-      logGroup: '/build-ecs/starter-kit/', // Replace 'core' with appropriate service
+      logGroup: '/build-ecs/nora/starter-kit/', // Replace 'core' with appropriate service
     },
     loggers: {
       general: {
@@ -132,7 +132,7 @@ config.build = {
 };
 
 // sandbox_ecs
-config.sandbox = {
+config['sandbox-ecs'] = {
   starterKitDB: {
     host: 'db-nora-sandbox.science37.com',
     ssl: 'Amazon RDS',
@@ -141,7 +141,7 @@ config.sandbox = {
   },
   logging: {
     aws: {
-      logGroup: '/sandbox-ecs/starter-kit/', // Replace 'core' with appropriate service
+      logGroup: '/sandbox-ecs/nora/starter-kit/', // Replace 'core' with appropriate service
     },
     loggers: {
       general: {
@@ -159,7 +159,7 @@ config.sandbox = {
 };
 
 // stage_ecs
-config.stage = {
+config['stage-ecs'] = {
   starterKitDB: {
     host: 'db-nora-stage.cti10lnrh4rb.us-west-2.rds.amazonaws.com',
     ssl: 'Amazon RDS',
@@ -168,13 +168,13 @@ config.stage = {
   },
   logging: {
     aws: {
-      logGroup: '/stage-ecs/starter-kit/', // Replace 'core' with appropriate service
+      logGroup: '/stage-ecs/nora/starter-kit/', // Replace 'core' with appropriate service
     },
   },
 };
 
 // test
-config.test = {
+config['test'] = {
   starterKitDB: {
     host: 'localhost',
     port: 3307,
@@ -182,7 +182,7 @@ config.test = {
   logging: {
     aws: {
       region: 'us-west-2',
-      logGroup: '/test/starter-kit/', // Replace 'core' with appropriate service
+      logGroup: '/test/nora/starter-kit/', // Replace 'core' with appropriate service
     },
     loggers: {
       general: {
