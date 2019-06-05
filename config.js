@@ -4,13 +4,13 @@ const deepmerge = require('deepmerge');
 const config = {};
 
 // default is local cloud9
-config.local = {
+config['dev-docker'] = {
   hapiOptions: {
     host: '0.0.0.0',
-    port: 11116,
+    port: 4044,
   },
   starterKitDB: {
-    host: 'localhost',
+    host: 'db',
     user: 'starter-kit',
     port: 3306,
     database: 'starter-kit',
@@ -24,7 +24,7 @@ config.local = {
   logging: {
     aws: {
       region: 'us-west-2',
-      logGroup: '/dev-docker/starter-kit/',
+      logGroup: '/dev-docker/nora/starter-kit/',
     },
     redactFields: [
     ],
@@ -49,7 +49,7 @@ config.local = {
 };
 
 // dev
-config.dev = {
+config['dev'] = {
   starterKitDB: {
     host: 'localhost',
     port: 3307,
@@ -57,13 +57,13 @@ config.dev = {
   },
   logging: {
     aws: {
-      logGroup: '/dev/starter-kit/',
+      logGroup: '/dev/nora/starter-kit/',
     },
   },
 };
 
 // dev-ecs
-config.dev_ecs = {
+config['dev-ecs'] = {
   starterKitDB: {
     host: 'db-nora-dev.cti10lnrh4rb.us-west-2.rds.amazonaws.com',
     ssl: 'Amazon RDS',
@@ -72,13 +72,13 @@ config.dev_ecs = {
   },
   logging: {
     aws: {
-      logGroup: '/dev-ecs/starter-kit/',
+      logGroup: '/dev-ecs/nora/starter-kit/',
     },
   },
 };
 
 // bi-ecs
-config.bi = {
+config['bi-ecs'] = {
   starterKitDB: {
     host: 'db-nora-bi.science37.com',
     database: 'nora-bi',
@@ -88,7 +88,7 @@ config.bi = {
   },
   logging: {
     aws: {
-      logGroup: '/bi-ecs/starter-kit/',
+      logGroup: '/bi-ecs/nora/starter-kit/',
     },
     loggers: {
       general: {
@@ -105,16 +105,16 @@ config.bi = {
   },
 };
 
-// build_ecs
-config.build = {
+// build-ecs
+config['build-ecs]'] = {
   starterKitDB: {
-    host: 'db-nora-build.science37.com',
+    host: 'db-nora-build.cti10lnrh4rb.us-west-2.rds.amazonaws.com',
     useIAM: true,
     region: 'us-west-2',
   },
   logging: {
     aws: {
-      logGroup: '/build-ecs/starter-kit/', // Replace 'core' with appropriate service
+      logGroup: '/build-ecs/nora/starter-kit/',
     },
     loggers: {
       general: {
@@ -131,17 +131,17 @@ config.build = {
   },
 };
 
-// sandbox_ecs
-config.sandbox = {
+// sandbox-ecs
+config['sandbox-ecs'] = {
   starterKitDB: {
-    host: 'db-nora-sandbox.science37.com',
+    host: 'db-nora-sandbox.cti10lnrh4rb.us-west-2.rds.amazonaws.com',
     ssl: 'Amazon RDS',
     useIAM: true,
     region: 'us-west-2',
   },
   logging: {
     aws: {
-      logGroup: '/sandbox-ecs/starter-kit/', // Replace 'core' with appropriate service
+      logGroup: '/sandbox-ecs/nora/starter-kit/',
     },
     loggers: {
       general: {
@@ -158,8 +158,8 @@ config.sandbox = {
   },
 };
 
-// stage_ecs
-config.stage = {
+// stage-ecs
+config['stage-ecs'] = {
   starterKitDB: {
     host: 'db-nora-stage.cti10lnrh4rb.us-west-2.rds.amazonaws.com',
     ssl: 'Amazon RDS',
@@ -168,13 +168,60 @@ config.stage = {
   },
   logging: {
     aws: {
-      logGroup: '/stage-ecs/starter-kit/', // Replace 'core' with appropriate service
+      logGroup: '/stage-ecs/nora/starter-kit/',
+    },
+  },
+};
+
+// val-ecs
+config['val-ecs'] = {
+  starterKitDB: {
+    host: 'nora-val-public.cjlwp23wi7ub.us-west-2.rds.amazonaws.com',
+    ssl: 'Amazon RDS',
+    useIAM: true,
+    region: 'us-west-2',
+  },
+  logging: {
+    aws: {
+      logGroup: '/val-ecs/nora/starter-kit/',
+    },
+  },
+};
+
+// pat-ecs
+
+config['pat-ecs'] = {
+  starterKitDB: {
+    host: 'db-nora-pat.cjlwp23wi7ub.us-west-2.rds.amazonaws.com',
+    ssl: 'Amazon RDS',
+    useIAM: true,
+    region: 'us-west-2',
+  },
+  logging: {
+    aws: {
+      logGroup: '/pat-ecs/nora/starter-kit/',
+    },
+  },
+};
+
+// prod-ecs
+
+config['prod-ecs'] = {
+  starterKitDB: {
+    host: 'db-nora-prod-master-56.cjlwp23wi7ub.us-west-2.rds.amazonaws.com',
+    ssl: 'Amazon RDS',
+    useIAM: true,
+    region: 'us-west-2',
+  },
+  logging: {
+    aws: {
+      logGroup: '/prod-ecs/nora/starter-kit/',
     },
   },
 };
 
 // test
-config.test = {
+config['test'] = {
   starterKitDB: {
     host: 'localhost',
     port: 3307,
@@ -182,7 +229,7 @@ config.test = {
   logging: {
     aws: {
       region: 'us-west-2',
-      logGroup: '/test/starter-kit/', // Replace 'core' with appropriate service
+      logGroup: '/test/nora/starter-kit/',
     },
     loggers: {
       general: {
@@ -195,8 +242,9 @@ config.test = {
   },
 };
 // merge the default config with the environment-specific config
-const env = process.env.NODE_ENV ? process.env.NODE_ENV: 'dev';
-const mergedConfig = deepmerge(config.local, config[env], {
+const env = process.env.NODE_ENV ? process.env.NODE_ENV: 'dev-docker';
+
+const mergedConfig = deepmerge(config['dev-docker'], config[env], {
   arrayMerge: (destination, source) => {
     return [ ...destination, ...source];
   },
