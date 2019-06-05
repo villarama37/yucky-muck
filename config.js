@@ -159,7 +159,7 @@ config.sandbox = {
 };
 
 // stage_ecs
-config.test = {
+config.stage = {
   starterKitDB: {
     host: 'db-nora-stage.cti10lnrh4rb.us-west-2.rds.amazonaws.com',
     ssl: 'Amazon RDS',
