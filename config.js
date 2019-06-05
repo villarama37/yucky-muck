@@ -176,10 +176,10 @@ config['stage-ecs'] = {
 // val-ecs
 config['val-ecs'] = {
   starterKitDB: {
-    host: process.env.DB_HOST,
+    host: 'nora-val-public.cjlwp23wi7ub.us-west-2.rds.amazonaws.com',
     ssl: 'Amazon RDS',
     useIAM: true,
-    region: process.env.DB_REGION,
+    region: 'us-west-2',
   },
   logging: {
     aws: {
@@ -192,10 +192,10 @@ config['val-ecs'] = {
 
 config['pat-ecs'] = {
   starterKitDB: {
-    host: process.env.DB_HOST,
+    host: 'db-nora-pat.cjlwp23wi7ub.us-west-2.rds.amazonaws.com',
     ssl: 'Amazon RDS',
     useIAM: true,
-    region: process.env.DB_REGION,
+    region: 'us-west-2',
   },
   logging: {
     aws: {
@@ -208,10 +208,10 @@ config['pat-ecs'] = {
 
 config['prod-ecs'] = {
   starterKitDB: {
-    host: process.env.DB_HOST,
+    host: 'db-nora-prod-master-56.cjlwp23wi7ub.us-west-2.rds.amazonaws.com',
     ssl: 'Amazon RDS',
     useIAM: true,
-    region: process.env.DB_REGION,
+    region: 'us-west-2',
   },
   logging: {
     aws: {
