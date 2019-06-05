@@ -2,7 +2,7 @@
 
 **Hapi Starter Kit** is a **reference service** to be used as a template for 
 building all node.js services with [hapi.js](https://hapijs.com/). The reference contains 
-the foundations and plumbing for everything that is needed to successfully develop, test and 
+the foundations and plumbing for everything that is needed to successfully develop, document, test and 
 deploy a production-ready service so that developers can focus on delivering business value.
 
 ## Steps for creating a new service
