@@ -4,13 +4,13 @@ const deepmerge = require('deepmerge');
 const config = {};
 
 // default is local cloud9
-config.local = {
+config['dev-docker'] = {
   hapiOptions: {
     host: '0.0.0.0',
-    port: 11116,
+    port: 4044,
   },
   starterKitDB: {
-    host: 'localhost',
+    host: 'db',
     user: 'starter-kit',
     port: 3306,
     database: 'starter-kit',
@@ -195,8 +195,9 @@ config.test = {
   },
 };
 // merge the default config with the environment-specific config
-const env = process.env.NODE_ENV ? process.env.NODE_ENV: 'dev';
-const mergedConfig = deepmerge(config.local, config[env], {
+const env = process.env.NODE_ENV ? process.env.NODE_ENV: 'dev-docker';
+
+const mergedConfig = deepmerge(config['dev-docker'], config[env], {
   arrayMerge: (destination, source) => {
     return [ ...destination, ...source];
   },

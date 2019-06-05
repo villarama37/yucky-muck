@@ -2,12 +2,10 @@ const Hapi = require('hapi');
 const exampleRoutes = require(__dirname + '/src/routes/v2/hapistarterkit/MyModel.js');
 const healthcheckRoute = require(__dirname + '/src/routes/version.js');
 const plugins = require(__dirname + '/src/plugins/plugins.js');
+const config = require(__dirname + '/config.js');
 
 (async () => {
-  const server = await new Hapi.Server({
-    host: '0.0.0.0',
-    port: 4044,
-  });
+  const server = await new Hapi.Server(config.hapiOptions);
 
   try {
     // register plugins
