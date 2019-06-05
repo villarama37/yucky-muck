@@ -11,7 +11,7 @@ env:
   variables:
     ENV: "dev"  # override this value for stage, sandbox, build, etc
     IMAGE_TAG: "latest"
-    IMAGE_REPO_NAME: "ecr_dev_nora-hapi-starter-kit"
+    IMAGE_REPO_NAME: "ecr_dev_hapi-starter-kit"
     AWS_ACCOUNT_ID: "125900505984"
     SLACK_CHANNEL: "tech-backend"
     SLACK_WEBHOOK: "https://hooks.slack.com/services/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"
