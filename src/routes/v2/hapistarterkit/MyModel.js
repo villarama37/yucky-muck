@@ -1,4 +1,4 @@
-const Boom = require('boom');
+const Boom = require('@hapi/boom');
 const { MyModel, MyModelResponse } = require(__dirname + '/../../../models/MyModel.js');
 const MyModelController = require(__dirname + '/../../../controllers/MyModel.js');
 const Joi = require('@hapi/joi');
@@ -38,6 +38,7 @@ module.exports = [
         status: {
           200: MyModelResponse,
           403: Joi.any(),
+          404: Joi.any(),
         },
         failAction: failAction('response'),
       },

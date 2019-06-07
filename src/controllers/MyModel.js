@@ -1,5 +1,5 @@
 const MyModelDao = require(__dirname + '/../dao/MyModel.js');
-
+const Boom = require('@hapi/boom');
 /*
  * PRIVATE METHODS
  */
@@ -25,7 +25,9 @@ module.exports = {};
 * @return {Promise}
 */
 module.exports.findById = async (id, request) => {
-  return await MyModelDao.findById(id, request);
+  const result = await MyModelDao.findById(id, request);
+  if (result) return result;
+  throw Boom.notFound('MyModel Not Found');
 };
 
 /**
