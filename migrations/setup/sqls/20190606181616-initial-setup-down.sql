@@ -1,1 +1,1 @@
-/* Replace with your SQL commands */
+DROP USER 'starter-kit'@'localhost';
