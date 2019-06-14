@@ -21,6 +21,16 @@ make the necessary configurations to [harmony-cloud9](https://github.com/Science
 so that the service can be developed in the Cloud9 development environment. Once these steps are done, you 
 can begin development on the new service.
 
+### Replacing example service references
+
+* Rename folder src/routes/v2/hapistarterkit to src/routes/v2/\<myservicename\>
+* Find and replace all references to ‘hapistarterkit’ to \<myservicename\>
+* Find and replace all references to ‘hapi-starter-kit’ to \<my-service-name\>
+* Find and replace all references to ‘starter-kit’ to \<my-service-name\>
+* Modify config.js
+    * Change all port definitions to match the port chosen when modifying the harmony docker-compose file.
+    * If your databases make use of passwords, enter them for each config
+
 ### Expose route(s) on API Gateway
 If the services will have an API, the routes will need to be added to the API Gateway, and
 any required or applicable middleware (such as auth) for the routes will need to be configured. 
