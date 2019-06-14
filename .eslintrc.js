@@ -7,10 +7,7 @@ module.exports = {
   extends: 'eslint:recommended',
   parserOptions: {
     sourceType: 'module',
-    ecmaVersion: 2018,
-    ecmaFeatures: {
-      experimentalObjectRestSpread: true, // TODO: figure out why still experimental when its a full feature of node 10+
-    },
+    ecmaVersion: 2019,
   },
   rules: {
     indent: ['error', 2],
