@@ -31,6 +31,19 @@ can begin development on the new service.
     * Change all port definitions to match the port chosen when modifying the harmony docker-compose file.
     * If your databases make use of passwords, enter them for each config
 
+### Setting Up Your Database
+
+If your service uses MySQL, you should edit the initial schema migration file at
+_\/hapi-starter-kit\/migrations\/schema\/sqls\/20190531204421-initial-up.sql_ so that it contains the initial tables your service requires.
+
+Once you have added any initial tables your service requires, execute the following db-migrate commands:
+
+* _db-migrate db:create \<my-service-name\>_ (creating your database)
+* _db-migrate up:setup-dev_ **or** _db-migrate up:setup_ if deploying (setting up your db user)
+* _db-migrate up:schema_ (updating your database with your schema changes)
+
+After running the commands, your database user and schema should be setup. For all future migrations, simply run _db-migrate up:schema_.
+
 ### Expose route(s) on API Gateway
 If the services will have an API, the routes will need to be added to the API Gateway, and
 any required or applicable middleware (such as auth) for the routes will need to be configured. 

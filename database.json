@@ -2,11 +2,10 @@
   "defaultEnv": "local-dev",
   "local-dev": {
     "driver": "mysql",
-    "user": "starter-kit",
+    "user": "root",
     "password": "3k293cp0tjnMq",
     "host": "localhost",
     "port": "3307",
-    "database": "starter-kit",
     "schema": "public",
     "multipleStatements": true,
     "sql-file": true
