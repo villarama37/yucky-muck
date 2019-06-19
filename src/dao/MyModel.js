@@ -9,11 +9,8 @@ module.exports = {
    */
   findById: async (id, request) => {
     const connection = request.app.db.connection;
-    const sql = `
-      SELECT * FROM MyModel
-      WHERE id = ${connection.escape(id)}
-    `;
-    const [results] = await connection.query(sql);
+    const sql = 'SELECT `id`, `description` FROM MyModel WHERE `id` = ?';
+    const [results] = await connection.execute(sql, [id]);
     return results.length > 0 ? results[0] : null;
   },
 
@@ -25,13 +22,8 @@ module.exports = {
   */
   create: async (myModel, request) => {
     const connection = request.app.db.connection;
-    const sql = `
-      INSERT INTO MyModel
-      (${Object.keys(myModel).join(',')})
-      VALUES
-      (${Object.values(myModel).map(val => connection.escape(val)).join(',')})
-    `;
-    const [results] = await connection.query(sql);
+    const sql = 'INSERT INTO MyModel (`description`) VALUES (?)';
+    const [results] = await connection.execute(sql, [myModel.description]);
     return results.insertId;
   },
 };
