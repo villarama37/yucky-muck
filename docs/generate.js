@@ -7,7 +7,7 @@ const options = {
   method: 'GET',
   url: `http://${config.hapiOptions.host}:${config.hapiOptions.port}/swagger.json`,
   payload: {},
-  validate: false
+  validate: false,
 };
 
 (async ()=> {
