@@ -16,7 +16,7 @@ const options = {
     const hapiServer = await server.start();
     const { result } = await hapiServer.inject(options);
     const documentationYAML = json2yaml.stringify(result);
-    fs.writeFileSync(__dirname + '/rest.yaml', documentationYAML);
+    fs.writeFileSync(__dirname + '/REST.yaml', documentationYAML);
     await hapiServer.stop();
     process.exit(0);
   }
