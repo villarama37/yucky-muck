@@ -68,9 +68,11 @@ Any changes to the package.js file will require review and approval by a securit
 ## Development Guidelines
 
 * Before making a pull request:
+  * If models or routes have changed, generate documentation by running _'npm run generate-docs'_
+  and stage any resulting changes to docs/REST.md
   * Pass ESLint
   * Write API and/or Unit tests (>XX% coverage)
   * Pass API and Unit tests
-* Only access notification-service-specific tables
+* Only access service-specific tables
 * Use async/await when possible
 * Write mocks for DAO methods
