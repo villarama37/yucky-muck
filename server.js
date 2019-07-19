@@ -4,7 +4,7 @@ const healthcheckRoute = require(__dirname + '/src/routes/version.js');
 const plugins = require(__dirname + '/src/plugins/plugins.js');
 const config = require(__dirname + '/config.js');
 
-(async () => {
+const start = async () => {
   const server = await new Hapi.Server(config.hapiOptions);
 
   try {
@@ -17,9 +17,13 @@ const config = require(__dirname + '/config.js');
     await server.start();
     console.log('Server running at:', server.info.uri);
     console.log('Swagger definition available at:', server.info.uri + '/swagger.json');
+    return server;
   }
   catch (err) {
     console.log(err);
   }
+};
 
-})();
+if (!module.parent) start();
+
+module.exports = { start };
