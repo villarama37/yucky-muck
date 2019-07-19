@@ -50,6 +50,10 @@ config['dev-docker'] = {
 
 // dev
 config['dev'] = {
+  hapiOptions: {
+    host: '0.0.0.0',
+    port: 5044,
+  },
   starterKitDB: {
     host: 'localhost',
     port: 3307,

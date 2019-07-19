@@ -8,7 +8,7 @@
     "start-dev": "nodemon .",
     "test": "jest",
     "lint": "eslint .",
-    "generate-docs": "node docs/generate.js && swagger-markdown -i docs/rest.yaml && rm docs/rest.yaml"
+    "generate-docs": "NODE_ENV=dev node docs/generate.js && swagger-markdown -i docs/rest.yaml && rm docs/rest.yaml"
   },
   "dependencies": {
     "@hapi/boom": "^7.4.2",
