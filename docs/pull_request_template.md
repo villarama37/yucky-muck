@@ -44,3 +44,13 @@ _Describe Tech Debt Risk from_
 
 ### Have we done this before with this technology?
 _Yes/No_
+
+### How Has This Been Tested?
+<!-- Include details of your testing environment, and the tests that you ran -->
+<!-- to verify the effect your changes will have on other areas of the code. -->
+
+### Product Manager Notes
+<!-- Additional Area for PM's -->
+
+
+
