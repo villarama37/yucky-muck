@@ -49,6 +49,16 @@ If the services will have an API, the routes will need to be added to the API Ga
 any required or applicable middleware (such as auth) for the routes will need to be configured. 
 For further instructions, refer to [Express API Gateway](https://github.com/Science37/nora-api-gateway)
 
+### Setting hapi-starter-kit as upstream repository
+Note: This will require you to handle merge conflicts. If your service has diverged substantially from the hapi-starter-kit, 
+it may be simpler to manually add the desired updates to your service.
+
+If there are any major updates in hapi-starter-kit that you would like to pull back into your service, you can set hapi-starter-kit as
+the remote upstream repository using the follow command:
+* $ git remote add upstream git@github.com:Science37/hapi-starter-kit.git
+
+To pull updates from the hapi-starter-kit into your service use this command:
+* $ git pull --allow-unrelated-histories
 
 ## Contribution Guidelines
 
