@@ -65,7 +65,7 @@ To pull updates from the hapi-starter-kit into your service use this command:
 If common features are developed or there are architectural improvements that all services will benefit from,
 these should be added to the hapi-starter-kit. While there are no hard-and-fast rules on what these are,
 a general guideline should be that all services use them. For other cases, developing a 
-[https://hapijs.com/tutorials/plugins](hapi plugin) would be a better way to go. If the plugin contains 
+[hapi plugin](https://hapijs.com/tutorials/plugins) would be a better way to go. If the plugin contains 
 very common / shared features, such as authorization, this would be a good place to add an example for 
 using the plugin.
 
