@@ -2,8 +2,6 @@ const config = require(__dirname + '/config.js');
 const server = require(__dirname + '/server.js');
 
 exports.handler = async requestOptions => {
-  console.log(__dirname + '/config.js');
-  console.log(__dirname + '/server.js');
   const request = {
     method: requestOptions.method,
     url: `http://${config.hapiOptions.host}:${config.hapiOptions.port}${requestOptions.path}`,
