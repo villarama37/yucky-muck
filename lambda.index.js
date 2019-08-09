@@ -6,7 +6,6 @@ exports.handler = async requestOptions => {
     method: requestOptions.method,
     url: `http://${config.hapiOptions.host}:${config.hapiOptions.port}${requestOptions.path}`,
     payload: requestOptions.payload,
-    validate: false,
   };
   let hapiServer;
   try {
