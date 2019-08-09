@@ -18,7 +18,7 @@ exports.handler = async requestOptions => {
     if (hapiServer) {
       await hapiServer.stop();
     }
-    console.log('studio lambda error is :', error);
+    console.log('lambda execution error is :', error);
     throw error;
   }
 };
