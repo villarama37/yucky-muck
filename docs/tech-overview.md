@@ -14,6 +14,7 @@
 - [HackMD.io: A Collaborative Markdown Editor](https://hackmd.io)
   - Log in using your Google account
   - **Do not use a trial account**
+  - **Do not upload images**
   - Commit markdown files to git repository
   - Delete documents on hackmd.io after you've finished editing
 - [Dillinger: An Online Markdown Editor - and more!](https://dillinger.io/)
