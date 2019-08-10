@@ -45,7 +45,7 @@
 - [Create Text Diagrams](http://asciiflow.com/)
 - This document contains [Mermaid](https://mermaidjs.github.io/) diagrams
    - [Chrome-GitHub Mermaid Viewer](https://chrome.google.com/webstore/detail/github-%2B-mermaid/goiiopgdnkogdbjmncgedmgpoajilohe?hl=en-US)
-   - [Mermaid Viewer for VSCode](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-mermaid) - view with ⌘-k, then v
+   - [Mermaid-Markdown Preview for VSCode](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-mermaid) - Type ⌘-k, then v
    - [Mermaid Preview for VSCode](https://marketplace.visualstudio.com/items?itemName=vstirbu.vscode-mermaid-preview) - Put the cursor in a ```mermaid``` block, type Shift-⌘-P, then type "Preview Mermaid"
 
 ## <a name='Glossary'></a>Glossary
