@@ -42,6 +42,9 @@
 
 ### <a name='Diagrams'></a>Diagrams
 
+- Example of an image diagram (can be stored in repo):
+![](https://assets.digitalocean.com/articles/oauth/auth_code_flow.png)
+
 - [Create Text Diagrams](http://asciiflow.com/)
 - This document contains [Mermaid](https://mermaidjs.github.io/) diagrams
    - [Chrome-GitHub Mermaid Viewer](https://chrome.google.com/webstore/detail/github-%2B-mermaid/goiiopgdnkogdbjmncgedmgpoajilohe?hl=en-US)
