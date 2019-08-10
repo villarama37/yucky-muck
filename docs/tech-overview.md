@@ -8,7 +8,8 @@
 * [Purpose](#Purpose)
 * [Tickets](#Tickets)
 * [Assumptions](#Assumptions)
-* [Risks and Potential Bugs](#RisksandPotentialBugs)
+* [Technical Risks](#TechnicalRisks)
+* [Potential Bugs](#RisksandPotentialBugs)
 * [Systems](#Systems)
 * [Processes](#Processes)
 	* [Image Creation](#ImageCreation)
@@ -73,7 +74,15 @@ This document describes the technical implementation of the ? Service.
 
 1. 
 
-## <a name='RisksandPotentialBugs'></a>Risks and Potential Bugs
+## <a name='TechnicalRisks'></a>Technical Risks
+
+[See here for ideas](https://science37.atlassian.net/wiki/spaces/TECH/pages/509804643/Technology+Risk+Matrix)
+
+1.
+
+## <a name='PotentialBugs'></a>Potential Bugs
+
+List any scenarios that testers should especially focus on.
 
 1. 
 
