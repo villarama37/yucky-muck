@@ -9,7 +9,7 @@
 * [Tickets](#Tickets)
 * [Assumptions](#Assumptions)
 * [Technical Risks](#TechnicalRisks)
-* [Potential Bugs](#RisksandPotentialBugs)
+* [Potential Bugs](#PotentialBugs)
 * [Systems](#Systems)
 * [Processes](#Processes)
 	* [Image Creation](#ImageCreation)
