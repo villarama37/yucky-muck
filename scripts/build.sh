@@ -1,7 +1,7 @@
 #!/bin/sh 
 
 #
-# We want the lambda zip file to be as small as possible.  We also don't want to add files accidentally specally the .env files
+# We want the lambda zip file to be as small as possible.  We also don't want to add files accidentally specially the .env files
 # that could contain passwords.
 # 
 # This script copies only the required files in the build directory.
