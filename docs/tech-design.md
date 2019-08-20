@@ -2,7 +2,7 @@
 
 <!-- vscode-markdown-toc -->
 * [Meta](#Meta)
-	* [Markdown Authoring Tools and Viewers](#MarkdownAuthoringToolsandViewers)
+* [Markdown Authoring Tools and Viewers](#MarkdownAuthoringToolsandViewers)
 	* [Diagrams](#Diagrams)
 * [Glossary](#Glossary)
 * [Purpose](#Purpose)
@@ -31,7 +31,7 @@
 - [Slack](https://science37team.slack.com/messages/CLJS9SHCH)
 - [Pull Request](https://github.com/Science37/lambda-pdf-to-img/pull/1) 
 
-### <a name='MarkdownAuthoringToolsandViewers'></a>Markdown Authoring Tools and Viewers
+## <a name='MarkdownAuthoringToolsandViewers'></a>Markdown Authoring Tools and Viewers
 
 - [Table of Contents Generator for VSCode](https://marketplace.visualstudio.com/items?itemName=joffreykern.markdown-toc)
 - [HackMD.io: A Collaborative Markdown Editor](https://hackmd.io)
@@ -143,4 +143,4 @@ sequenceDiagram
 
 ## <a name='API'></a>API
 
-[API Documentation](api.md).
+See [API Documentation](api.md).
