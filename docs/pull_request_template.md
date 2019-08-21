@@ -10,7 +10,7 @@ Functional Specs: [<Jira Ticket>](https://science37.atlassian.net/browse/<Jira T
 - [ ] I added tests that prove my fix is effective or that my feature works
 - [ ] I followed the [Playbook](https://science37.atlassian.net/wiki/spaces/TECH/pages/484147358/Implementation+Specification+Playbook)
 
-## Summary of changes
+## Summary of Changes
 
 _Please describe_
 
