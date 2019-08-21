@@ -14,7 +14,7 @@ Functional Specs: [<Jira Ticket>](https://science37.atlassian.net/browse/<Jira T
 
 _Please describe_
 
-## Risk
+## Risks
 
 Check any that apply and describe if necessary. Specify additional risks as needed. See also the [Tech Risk Matrix](https://science37.atlassian.net/wiki/spaces/TECH/pages/509804643/Technology%2BRisk%2BMatrix).
 
