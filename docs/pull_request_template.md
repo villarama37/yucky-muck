@@ -19,7 +19,7 @@ _Please describe_
 Check any that apply and describe if necessary. Specify additional risks as needed. See also the [Tech Risk Matrix](https://science37.atlassian.net/wiki/spaces/TECH/pages/509804643/Technology%2BRisk%2BMatrix).
 
 - [ ] Performance
-- [ ] Pioneering new technology or technique
+- [ ] New technology or technique
 - [ ] Regression (e.g., changing unfamiliar code)
 - [ ] Tech debt
 - [ ] Security
