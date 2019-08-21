@@ -25,7 +25,7 @@ Check any that apply and describe if necessary. Specify additional risks as need
 - [ ] Security
 - [ ] PHI or other sensitive data exposure
 
-## How Has This Been Tested?
+## Test Plan
 
 _Please describe_
 
