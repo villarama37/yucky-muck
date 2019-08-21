@@ -4,7 +4,7 @@ Functional Specs: [<Jira Ticket>](https://science37.atlassian.net/browse/<Jira T
 
 ## Checklist
 
-- [ ] I updated the Jira Ticket to link Functional Specs
+- [ ] I updated the Jira ticket to link Functional Specs
 - [ ] Lint and unit tests pass locally with my changes
 - [ ] Heimdall and API tests pass on my cloud9 instance
 - [ ] I added tests that prove my fix is effective or that my feature works
@@ -20,7 +20,7 @@ Check any that apply and describe if necessary. Specify additional risks as need
 
 - [ ] Performance
 - [ ] New technology or technique
-- [ ] Regression (e.g., changing unfamiliar code)
+- [ ] Regression (changing unfamiliar code)
 - [ ] Tech debt
 - [ ] Security
 - [ ] PHI or other sensitive data exposure
