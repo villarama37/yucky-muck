@@ -4,15 +4,15 @@ Functional Specs: [<Jira Ticket>](https://science37.atlassian.net/browse/<Jira T
 
 ## Checklist
 
+- [ ] I followed the [Playbook](https://science37.atlassian.net/wiki/spaces/TECH/pages/484147358/Implementation+Specification+Playbook)
 - [ ] I updated the Jira ticket to link Functional Specs
 - [ ] Lint and unit tests pass locally with my changes
 - [ ] Heimdall and API tests pass on my cloud9 instance
 - [ ] I added tests that prove my fix is effective or that my feature works
-- [ ] I followed the [Playbook](https://science37.atlassian.net/wiki/spaces/TECH/pages/484147358/Implementation+Specification+Playbook)
 
-## Summary of Changes
+## Changes
 
-_Please describe_
+_Please describe work to be done_
 
 ## Risks
 
