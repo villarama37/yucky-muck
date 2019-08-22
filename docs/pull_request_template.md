@@ -21,6 +21,7 @@ Check any that apply and describe if necessary. Specify additional risks as need
 - [ ] Performance
 - [ ] New technology or technique
 - [ ] Regression (changing unfamiliar code)
+- [ ] Complex code
 - [ ] Tech debt
 - [ ] Security
 - [ ] PHI or other sensitive data exposure
