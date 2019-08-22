@@ -4,6 +4,7 @@ Functional Specs: [<Jira Ticket>](https://science37.atlassian.net/browse/<Jira T
 
 ## Checklist
 
+- [ ] I labeled this PR with 'Implementation Specification' label
 - [ ] I followed the [Playbook](https://science37.atlassian.net/wiki/spaces/TECH/pages/484147358/Implementation+Specification+Playbook)
 - [ ] I updated the Jira ticket to link Functional Specs
 - [ ] Lint and unit tests pass locally with my changes
