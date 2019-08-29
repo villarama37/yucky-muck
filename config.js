@@ -34,7 +34,7 @@ config['dev-docker'] = {
           errorFile: true,
           allFile: true,
           console: true,
-          cloudWatch: false,
+          cloudWatch: true,
         },
       },
     },
@@ -313,4 +313,4 @@ const mergedConfig = deepmerge(config['dev-docker'], config[env], {
   },
 });
 
-module.exports = mergedConfig;
+module.exports = { ...mergedConfig, env };
