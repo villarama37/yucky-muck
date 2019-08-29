@@ -6,7 +6,7 @@ const pathParts = __dirname.match(/routes\/(v\d+)\/([^/]+)/);
 const apiVersion = pathParts[1];
 const svcName = pathParts[2];
 
-const CORRELATION_ID = 's27-correlation-id';
+const CORRELATION_ID = 's37-correlation-id';
 
 /** *
  * This is a example of passing the correlationId to downstream internal services
