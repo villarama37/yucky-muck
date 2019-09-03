@@ -1,4 +1,4 @@
-const Hapi = require('hapi');
+const Hapi = require('@hapi/hapi');
 const exampleRoutes = require(__dirname + '/src/routes/v2/hapistarterkit/MyModel.js');
 const healthcheckRoute = require(__dirname + '/src/routes/version.js');
 const plugins = require(__dirname + '/src/plugins/plugins.js');
