@@ -29,7 +29,6 @@ in the harmony docker-compose file.
 * Find and replace all references to ‘hapistarterkit’ to \<myservicename\>
 
 * Modify config.js
-    * Change all port definitions 
     * If your databases make use of passwords, enter them for each config
 
 ### Setting Up Your Database
