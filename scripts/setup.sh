@@ -13,9 +13,6 @@
 # exit immediately if there are any errors
 set -e
 
-# Replace database user with 'nora'
-sed -i "s/user: 'starter-kit'/user: 'nora'/g" config.js
-
 echo "Service name i.e. Hapi Starter Kit:"
 read answer
   sed -i "s/Hapi Starter Kit/$answer/g" docs/api.md
@@ -36,6 +33,8 @@ read answer
   sed -i "s/starter-kit/$LOWER_HYPHENED/g" config.js
   sed -i "s/starter-kit/$LOWER_HYPHENED/g" database.json
   sed -i "s/starter-kit/$LOWER_HYPHENED/g" migrations/schema/config.json
+  sed -i "s/starter-kit/$LOWER_HYPHENED/g" migrations/setup/config.json
+  sed -i "s/starter-kit/$LOWER_HYPHENED/g" migrations/setup-dev/config.json
   
 # convert to camel case
   CAMEL_CASE="${answer/ /}"
