@@ -1,17 +1,14 @@
 #!/bin/sh
 
-# Hapi-starter-kit update list
-##### config.js
-# X change service port number
-# change service name in config
-# X supply new database name if needed and update in config
-# X replace log group names
-
-
-# update database.json and database migration files
-# update name and description in package.json
-# X update SAM template: description, resource name, function name, and stage name
-# X rename title in hapi swagger plugin
+## Hapi-starter-kit update list
+# service port number
+# service name
+# database name
+# log group name
+# database.json and database migration files
+# name and description in package.json
+# SAM template: description, resource name, function name, and stage name
+# title in hapi swagger plugin
 
 # exit immediately if there are any errors
 set -e
@@ -47,7 +44,7 @@ read answer
 echo "Port number i.e.4044:"
 read answer
   sed -i "s/4044/$answer/g" ../config.js
-
+  
 # echo "Log group:"
 # read answer
 #   sed -i "s/\/starter-kit/\/$answer/g" ../config.js
