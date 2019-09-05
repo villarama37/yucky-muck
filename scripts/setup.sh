@@ -35,6 +35,10 @@ read answer
   sed -i "s/starter-kit/$LOWER_HYPHENED/g" migrations/schema/config.json
   sed -i "s/starter-kit/$LOWER_HYPHENED/g" migrations/setup/config.json
   sed -i "s/starter-kit/$LOWER_HYPHENED/g" migrations/setup-dev/config.json
+  sed -i "s/starter-kit/$LOWER_HYPHENED/g" "migrations/setup/sqls/20190606181616-initial-setup-up.sql"
+  sed -i "s/starter-kit/$LOWER_HYPHENED/g" "migrations/setup/sqls/20190606181616-initial-setup-down.sql"
+  sed -i "s/starter-kit/$LOWER_HYPHENED/g" "migrations/setup-dev/sqls/20190606181601-initial-setup-up.sql"
+  sed -i "s/starter-kit/$LOWER_HYPHENED/g" "migrations/setup-dev/sqls/20190606181601-initial-setup-down.sql"
   
 # convert to camel case
   CAMEL_CASE="${answer/ /}"
