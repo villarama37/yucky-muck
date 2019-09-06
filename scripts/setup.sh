@@ -20,7 +20,8 @@ read answer
   sed -i "s/Example Hapi/$answer API/g" package.json
   
 # convert to hyphened
-  HYPHENED="${answer/ /-}"
+  HYPHENED="${answer// /-}"
+  echo $HYPHENED
   LOWER_HYPHENED="${HYPHENED,,}"
   sed -i "s/hapi-starter-kit/$LOWER_HYPHENED-api/g" package.json
   sed -i "s/hapi-starter-kit example/$LOWER_HYPHENED/g" sam-template.yml
@@ -41,7 +42,8 @@ read answer
   sed -i "s/starter-kit/$LOWER_HYPHENED/g" "migrations/setup-dev/sqls/20190606181601-initial-setup-down.sql"
   
 # convert to camel case
-  CAMEL_CASE="${answer/ /}"
+  CAMEL_CASE="${answer// /}"
+  echo $CAMEL_CASE
   LOWER_CAMEL_CASE="${CAMEL_CASE,}"
   sed -i "s/StarterKit/$CAMEL_CASE/g" sam-template.yml
   sed -i "s/starter/$LOWER_CAMEL_CASE/g" sam-template.yml
