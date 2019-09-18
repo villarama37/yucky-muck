@@ -133,7 +133,7 @@ config['bi-ecs'] = {
 };
 
 // build-ecs
-config['build-ecs]'] = {
+config['build-ecs'] = {
   starterKitDB: {
     host: 'db-nora-build.cti10lnrh4rb.us-west-2.rds.amazonaws.com',
     useIAM: true,
