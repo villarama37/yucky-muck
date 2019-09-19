@@ -31,10 +31,10 @@ config['dev-docker'] = {
     loggers: {
       general: {
         transports: {
-          errorFile: false,
-          allFile: false,
-          console: false,
-          cloudWatch: true,
+          errorFile: true,
+          allFile: true,
+          console: true,
+          cloudWatch: false,
         },
       },
     },
@@ -48,7 +48,7 @@ config['dev-docker'] = {
   },
 };
 
-// dev
+// local development environment
 config['dev'] = {
   hapiOptions: {
     host: '0.0.0.0',
@@ -63,10 +63,20 @@ config['dev'] = {
     aws: {
       logGroup: '/dev/nora/starter-kit/',
     },
+    loggers: {
+      general: {
+        transports: {
+          errorFile: false,
+          allFile: false,
+          console: true,
+          cloudWatch: false,
+        },
+      },
+    },
   },
 };
 
-// dev-ecs
+// dev-ecs deployed dev
 config['dev-ecs'] = {
   starterKitDB: {
     host: 'db-nora-dev.cti10lnrh4rb.us-west-2.rds.amazonaws.com',
@@ -77,6 +87,16 @@ config['dev-ecs'] = {
   logging: {
     aws: {
       logGroup: '/dev-ecs/nora/starter-kit/',
+    },
+    loggers: {
+      general: {
+        transports: {
+          errorFile: false,
+          allFile: false,
+          console: true,
+          cloudWatch: true,
+        },
+      },
     },
   },
 };
@@ -97,7 +117,10 @@ config['bi-ecs'] = {
     loggers: {
       general: {
         transports: {
+          errorFile: false,
+          allFile: false,
           console: true,
+          cloudWatch: true,
         },
       },
     },
@@ -110,7 +133,7 @@ config['bi-ecs'] = {
 };
 
 // build-ecs
-config['build-ecs]'] = {
+config['build-ecs'] = {
   starterKitDB: {
     host: 'db-nora-build.cti10lnrh4rb.us-west-2.rds.amazonaws.com',
     useIAM: true,
@@ -123,7 +146,10 @@ config['build-ecs]'] = {
     loggers: {
       general: {
         transports: {
+          errorFile: false,
+          allFile: false,
           console: true,
+          cloudWatch: true,
         },
       },
     },
@@ -150,7 +176,10 @@ config['sandbox-ecs'] = {
     loggers: {
       general: {
         transports: {
+          errorFile: false,
+          allFile: false,
           console: true,
+          cloudWatch: true,
         },
       },
     },
@@ -174,6 +203,16 @@ config['stage-ecs'] = {
     aws: {
       logGroup: '/stage-ecs/nora/starter-kit/',
     },
+    loggers: {
+      general: {
+        transports: {
+          errorFile: false,
+          allFile: false,
+          console: false,
+          cloudWatch: true,
+        },
+      },
+    },
   },
 };
 
@@ -189,11 +228,20 @@ config['val-ecs'] = {
     aws: {
       logGroup: '/val-ecs/nora/starter-kit/',
     },
+    loggers: {
+      general: {
+        transports: {
+          errorFile: false,
+          allFile: false,
+          console: false,
+          cloudWatch: true,
+        },
+      },
+    },
   },
 };
 
 // pat-ecs
-
 config['pat-ecs'] = {
   starterKitDB: {
     host: 'db-nora-pat.cjlwp23wi7ub.us-west-2.rds.amazonaws.com',
@@ -205,11 +253,20 @@ config['pat-ecs'] = {
     aws: {
       logGroup: '/pat-ecs/nora/starter-kit/',
     },
+    loggers: {
+      general: {
+        transports: {
+          errorFile: false,
+          allFile: false,
+          console: false,
+          cloudWatch: true,
+        },
+      },
+    },
   },
 };
 
 // prod-ecs
-
 config['prod-ecs'] = {
   starterKitDB: {
     host: 'db-nora-prod-master-56.cjlwp23wi7ub.us-west-2.rds.amazonaws.com',
@@ -220,6 +277,16 @@ config['prod-ecs'] = {
   logging: {
     aws: {
       logGroup: '/prod-ecs/nora/starter-kit/',
+    },
+    loggers: {
+      general: {
+        transports: {
+          errorFile: false,
+          allFile: false,
+          console: false,
+          cloudWatch: true,
+        },
+      },
     },
   },
 };
@@ -234,14 +301,6 @@ config['test'] = {
     aws: {
       region: 'us-west-2',
       logGroup: '/test/nora/starter-kit/',
-    },
-    loggers: {
-      general: {
-        transports: {
-          console: true,
-          cloudWatch: false,
-        },
-      },
     },
   },
 };
