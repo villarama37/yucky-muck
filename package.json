@@ -20,7 +20,7 @@
     "hapi-swagger": "^10.0.2",
     "@hapi/wreck": "^15.0.2",
     "nora-correlation-id-plugin": "git+ssh://git@github.com/Science37/nora-correlation-id-plugin#v1.0.2",
-    "nora-logger-plugin": "git+ssh://git@github.com/Science37/nora-mysql-plugin.git#v1.0.3",
+    "nora-logger-plugin": "git+ssh://git@github.com/Science37/nora-logger-plugin.git#v1.0.3",
     "nora-mysql-plugin": "git+ssh://git@github.com/Science37/nora-mysql-plugin.git#v2.0"
   },
   "devDependencies": {
