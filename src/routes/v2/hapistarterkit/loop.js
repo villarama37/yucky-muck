@@ -9,8 +9,8 @@ const svcName = pathParts[2];
 const CORRELATION_ID = 's37-correlation-id';
 
 /** *
- * This is a example of passing the correlationId to downstream internal services
- * using Wreck.  THIS IS NOT EXAMPLE OF GOOD API!
+ * This is an example of passing the correlationId to downstream internal services
+ * using Wreck.  THIS IS NOT AN EXAMPLE OF GOOD API!
  *
  * Endpoints:
  *
