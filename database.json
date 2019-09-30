@@ -7,7 +7,7 @@
     "host": "localhost",
     "port": "3307",
     "schema": "public",
-    "multipleStatements": false,
+    "multipleStatements": true,
     "sql-file": true
   },
   "other": {
@@ -18,7 +18,7 @@
     "port": { "ENV" : "DB_PORT" },
     "database": "starter-kit",
     "schema": "public",
-    "multipleStatements": false,
+    "multipleStatements": true,
     "sql-file": true,
     "ssl": "Amazon RDS"
   },
