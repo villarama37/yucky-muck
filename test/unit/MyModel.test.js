@@ -22,10 +22,11 @@ describe('Test basic CRUD-like operations', () => {
   test('It should create a MyModel instance', sinonTest(async () => {
     const id = Faker.random.number();
     const description = Faker.lorem.sentence();
+    const request = { log: () => {} };
     sinon.stub(MyModelDao, 'create').returns(id);
     const insertId = await MyModelController.create({
       description,
-    });
+    }, request );
     expect(insertId).toEqual(id);
   }));
 

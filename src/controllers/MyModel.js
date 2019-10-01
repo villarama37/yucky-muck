@@ -37,6 +37,8 @@ module.exports.findById = async (id, request) => {
  * @return {Promise}
  */
 module.exports.create = async (myModel, request) => {
+  request.log(['info'], { message: 'This is a way to log message!' });
+  request.log('info', 'This is an easier format for logging.');
   return await MyModelDao.create(myModel, request);
 };
 

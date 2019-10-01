@@ -21,10 +21,10 @@ From: https://aws.amazon.com/lambda/
 Add the following scripts to your package.json to help create lambdas.  
 
  ```
-"build-sam": "sam package --s3-bucket s37-dev-lambda --s3-prefix spira-sync --template-file sam-template.yml --output-template-file deploy-temp.yml",
+"build-sam": "sam package --s3-bucket s37-dev-lambda --s3-prefix <unique folder in bucket name> --template-file sam-template.yml --output-template-file deploy-temp.yml",
 "build": "./scripts/build.sh && npm run build-sam",
-"deploy-stage": "sam deploy --template-file deploy-temp.yml --parameter-overrides SHA=`git rev-parse HEAD` ENV=stage --stack-name spira-sync-stage-5 --capabilities CAPABILITY_IAM",
-"deploy-prod": "sam deploy --template-file deploy-temp.yml --parameter-overrides SHA=`git rev-parse HEAD` ENV=prod --stack-name spira-sync-prod --capabilities CAPABILITY_IAM",
+"deploy-stage": "sam deploy --template-file deploy-temp.yml --parameter-overrides SHA=`git rev-parse HEAD` ENV=stage --stack-name <stage-stack-name> --capabilities CAPABILITY_IAM",
+"deploy-prod": "sam deploy --template-file deploy-temp.yml --parameter-overrides SHA=`git rev-parse HEAD` ENV=prod --stack-name <prod-stack-name> --capabilities CAPABILITY_IAM",
  ```
 
 Then to deploy a staging lambda: `npm run build && npm run deploy-stage`

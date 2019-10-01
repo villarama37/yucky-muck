@@ -42,7 +42,6 @@ module.exports = [
         },
         failAction: failAction('response'),
       },
-      log: { collect: true },
       auth: false,
     },
     handler: async (request, h) => {
@@ -68,7 +67,6 @@ module.exports = [
         },
         failAction: failAction('response'),
       },
-      log: { collect: true },
       auth: false,
     },
     handler: async (request, h) => {
