@@ -53,6 +53,5 @@
     "multipleStatements": false,
     "sql-file": true,
     "ssl": "Amazon RDS"
-  },
-  "sql-file": true
+  }
 }
