@@ -42,6 +42,18 @@ Once you have added any initial tables your service requires, execute the follow
 * _db-migrate up:setup-dev_ **or** _db-migrate up:setup_ if deploying (setting up your db user)
 * _db-migrate up:schema_ (updating your database with your schema changes)
 
+By default, the _local-dev_ setup is used when running migrations. To specify another test environment, use the --env variable like below:
+
+* _db-migrate db:create \<my-service-name\> --env dev-ecs_
+* _db-migrate up:setup-dev --env dev-ecs_
+* _db-migrate up:schema -- env dev-ecs_
+
+In production-like environments, credentials can be dynamically supplied to the commands like in this example:
+
+* _DB_USER='admin' DB_PASSWORD='secret password' DB_HOST='db-nora-example.prod.com' DB_PORT=3306 db-migrate db:create 'my-service-name' --env other_
+* _DB_USER='admin' DB_PASSWORD='secret password' DB_HOST='db-nora-example.prod.com' DB_PORT=3306 db-migrate up:setup --env other_
+* _DB_USER='admin' DB_PASSWORD='secret password' DB_HOST='db-nora-example.prod.com' DB_PORT=3306 db-migrate up:schema --env other_
+
 After running the commands, your database user and schema should be setup. For all future migrations, simply run _db-migrate up:schema_.
 
 ### Expose route(s) on API Gateway
