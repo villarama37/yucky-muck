@@ -22,3 +22,6 @@ npm-debug.log
 #omit new relic log files
 newrelic.log
 newrelic_agent.log
+
+#file containing sensitive config settings
+.env

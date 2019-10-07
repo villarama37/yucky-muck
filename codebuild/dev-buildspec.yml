@@ -32,6 +32,10 @@ phases:
       - SHORT_SHA="commit-$(git rev-parse --short HEAD)-${ENV}"
       - NODE_ENV="${ENV}-ecs"
       - IMAGE_TAG="${CODEBUILD_SOURCE_VERSION}-${ENV}"
+      - ENV_ALL_CAPS=$(echo "${ENV}" | tr '[a-z]' '[A-Z]')
+
+      # Pull down the environment config file and save the contents into the codebase
+      - aws ssm get-parameters --names "/${ENV_ALL_CAPS}/unity/${PROJECT}/config/.env" --query "Parameters[*].{Value:Value}" --with-decryption --output text > ./.env
 
       # Build and tag the container
       - |
