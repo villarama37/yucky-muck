@@ -1,9 +1,9 @@
 'use strict';
 
 // parse environment variables from the specified file and store them in the
-// process.env object, eg. process.env.DB_PASSWORD (see .env-example file)
+// process.env object, eg. process.env.DB_PASSWORD (see .env-dev file for examples)
 if (process.env.NODE_ENV == 'dev-docker' || process.env.NODE_ENV == 'test') {
-  require('dotenv').config({ path: '.env-example' });
+  require('dotenv').config({ path: '.env-dev' });
 }
 else {
   require('dotenv').config();
