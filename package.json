@@ -16,9 +16,10 @@
     "@hapi/inert": "^5.2.0",
     "@hapi/joi": "^15.0.3",
     "@hapi/vision": "^5.5.2",
-    "deepmerge": "^3.3.0",
-    "hapi-swagger": "^10.0.2",
     "@hapi/wreck": "^15.0.2",
+    "deepmerge": "^3.3.0",
+    "dotenv": "^8.1.0",
+    "hapi-swagger": "^10.0.2",
     "nora-correlation-id-plugin": "git+ssh://git@github.com/Science37/nora-correlation-id-plugin#v1.0.2",
     "nora-logger-plugin": "git+ssh://git@github.com/Science37/nora-logger-plugin.git#v1.0.4",
     "nora-mysql-plugin": "git+ssh://git@github.com/Science37/nora-mysql-plugin.git#v2.0"

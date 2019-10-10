@@ -1,5 +1,14 @@
 'use strict';
 
+// parse environment variables from the specified file and store them in the
+// process.env object, eg. process.env.DB_PASSWORD (see .env-dev file for examples)
+if (process.env.NODE_ENV == 'dev-docker' || process.env.NODE_ENV == 'test') {
+  require('dotenv').config({ path: '.env-dev' });
+}
+else {
+  require('dotenv').config();
+}
+
 const deepmerge = require('deepmerge');
 const config = {};
 
@@ -17,7 +26,7 @@ config['dev-docker'] = {
     connectionLimit: 10,
     acquireTimeout: 60000,
     timeout: 60000,
-    password: '3k293cp0tjnMq',
+    password: process.env.DB_PASSWORD,
     default: true,
     usePool: true,
   },
