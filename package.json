@@ -1,7 +1,7 @@
 {
-  "name": "hapi-starter-kit",
-  "version": "0.0.2",
-  "description": "Example Hapi Service",
+  "name": "okta-webhook",
+  "version": "0.0.3",
+  "description": "Example of an Okta Web Hook",
   "main": "server.js",
   "scripts": {
     "start": "node .",
@@ -22,17 +22,20 @@
     "hapi-swagger": "^10.0.2",
     "nora-correlation-id-plugin": "git+ssh://git@github.com/Science37/nora-correlation-id-plugin#v1.0.2",
     "nora-logger-plugin": "git+ssh://git@github.com/Science37/nora-logger-plugin.git#v1.0.4",
-    "nora-mysql-plugin": "git+ssh://git@github.com/Science37/nora-mysql-plugin.git#v2.0"
+    "nora-mysql-plugin": "git+ssh://git@github.com/Science37/nora-mysql-plugin.git#v2.0",
+    "object-dig": "^0.1.3"
   },
   "devDependencies": {
     "eslint": "^5.14.1",
-    "nodemon": "^1.18.9",
-    "jest": "^24.8.0",
     "faker": "^4.1.0",
-    "sinon": "^7.3.2",
-    "sinon-test": "^2.4.0",
     "git-hooks": "^1.1.10",
-    "json2yaml": "^1.1.0"
+    "jest": "^24.8.0",
+    "json2yaml": "^1.1.0",
+    "nodemon": "^1.18.9",
+    "serverless-offline": "^5.12.0",
+    "serverless-pseudo-parameters": "^2.5.0",
+    "sinon": "^7.3.2",
+    "sinon-test": "^2.4.0"
   },
   "jest": {
     "testEnvironment": "node",

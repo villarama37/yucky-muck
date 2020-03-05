@@ -1,8 +1,7 @@
 const Hapi = require('@hapi/hapi');
-const exampleRoutes = require(__dirname + '/src/routes/v2/hapistarterkit/MyModel.js');
-const loopRoutes = require(__dirname + '/src/routes/v2/hapistarterkit/loop.js');
-const healthcheckRoute = require(__dirname + '/src/routes/version.js');
-const plugins = require(__dirname + '/src/plugins/plugins.js');
+const tokenRoute = require(__dirname + '/src/routes/v1/auth/token');
+const plugins = require(__dirname + '/src/plugins/plugins');
+const healthcheckRoute = require(__dirname + '/src/routes/version');
 const config = require(__dirname + '/config.js');
 
 /**
@@ -15,13 +14,12 @@ const start = async () => {
     // register plugins
     await server.register(plugins);
     // add routes
-    server.route(exampleRoutes);
-    server.route(loopRoutes);
+    server.route(tokenRoute);
     server.route(healthcheckRoute);
+
     // start server
     await server.start();
-    console.log('Server running at:', server.info.uri);
-    console.log('Swagger definition available at:', server.info.uri + '/swagger.json');
+    // console.log('Server running at:', server.info.uri);
     return server;
   }
   catch (err) {

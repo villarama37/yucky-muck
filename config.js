@@ -61,7 +61,7 @@ config['dev-docker'] = {
 config['dev'] = {
   hapiOptions: {
     host: '0.0.0.0',
-    port: 5044,
+    // port: 5044,
   },
   starterKitDB: {
     host: 'localhost',
@@ -70,7 +70,7 @@ config['dev'] = {
   },
   logging: {
     aws: {
-      logGroup: '/dev/nora/starter-kit/',
+      logGroup: '/dev/nora/okta-auth/',
     },
     loggers: {
       general: {
